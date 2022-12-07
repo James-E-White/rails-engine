@@ -73,5 +73,32 @@ RSpec.describe 'Items API' do
     expect(created_item.unit_price).to eq(item_params[:unit_price])
     expect(created_item.merchant_id).to eq(item_params[:merchant_id])
   end
-  
+
+  it 'can update an item' do 
+    id = create(:item).id 
+    item_name = Item.last.name
+
+    item_params = { name: "King Rubix cube" }
+    headers = { 'CONTENT_TYPE' => 'application/json' }
+    
+    patch "/api/v1/items/#{id}",headers: headers, params: JSON.generate(item: item_params) 
+    item = Item.find_by(id: id)
+
+    expect(response).to be_successful
+    expect(item.name).to eq(Item.last.name)
+    expect(item.name).to eq("King Rubix cube")
+
+  end
+  it 'errors out if not updated correctly' do 
+    id = create(:item).id 
+    item_name = Item.last.name
+
+    item_params = { name: "" }
+    headers = { 'CONTENT_TYPE' => 'application/json' }
+    
+    patch "/api/v1/items/#{id}",headers: headers, params: JSON.generate(item: item_params) 
+    item = Item.find_by(id: id)
+
+    expect(response).to_not be_successful
+  end
 end
