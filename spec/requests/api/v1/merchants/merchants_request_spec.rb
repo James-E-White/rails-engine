@@ -26,14 +26,13 @@ RSpec.describe 'Merchants API' do
     id = create(:merchant).id
 
     get "/api/v1/merchants/#{id}"
-
-    response_body = JSON.parse(response.body, symbolize_names: true)
-    merchants = response_body[:data]
-
+    
     expect(response).to be_successful
+    
+    merchant = JSON.parse(response.body, symbolize_names: true)
 
-    expect(merchants).to have_key(:id)
-    expect(merchants[:id]).to eq("#{id}")
+    expect(merchant[:data][:attributes]).to have_key(:name)
+    expect(merchant[:data][:attributes][:name]).to be_a(String) 
   end
 
   #   it 'returns a error 404 message if no valid merchant id #' do
