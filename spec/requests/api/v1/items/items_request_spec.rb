@@ -52,7 +52,11 @@ RSpec.describe 'Items API' do
     expect(item[:data][:attributes]).to have_key(:merchant_id)
     expect(item[:data][:attributes][:merchant_id]).to be_a(Integer)
   end
+  it 'returns a 400 error when the merchant does not exist' do
+    get "/api/v1/items/1"
 
+    expect(response).to have_http_status(404)
+  end
   it 'can create an item' do
     merchant = create(:merchant).id
     item_params = {
