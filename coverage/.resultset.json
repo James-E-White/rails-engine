@@ -1,13 +1,23 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jameswhite/Desktop/Turing/Mod3/solo_projects/rails-engine/app/models/merchant.rb": {
+      "/Users/jameswhite/Desktop/Turing/Mod3/solo_projects/rails-engine/app/models/item.rb": {
         "lines": [
+          1,
+          1,
+          null,
           1,
           null
         ]
       },
       "/Users/jameswhite/Desktop/Turing/Mod3/solo_projects/rails-engine/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/jameswhite/Desktop/Turing/Mod3/solo_projects/rails-engine/app/models/merchant.rb": {
         "lines": [
           1,
           1,
@@ -38,10 +48,30 @@
           1,
           1,
           1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/jameswhite/Desktop/Turing/Mod3/solo_projects/rails-engine/app/serializers/item_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/jameswhite/Desktop/Turing/Mod3/solo_projects/rails-engine/app/controllers/api/v1/items_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1670363438
+    "timestamp": 1670374592
   }
 }
