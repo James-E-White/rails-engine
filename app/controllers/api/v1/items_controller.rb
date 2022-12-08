@@ -14,7 +14,18 @@ class Api::V1::ItemsController < ApplicationController
     render json: ItemSerializer.new(Item.create!(item_params)), status: 201
   end
 
+  def update
+    item = Item.update(params[:id], item_params)
+    if item.save
+      render json: ItemSerializer.new(item)
+    else
+      render json: {error: "Item cannot be updated"}, status: 404
+    end
+  end
 
+  def destroy
+    render json: ItemSerializer.new(Item.destroy(params[:id]))
+  end
 
 private
     def item_params

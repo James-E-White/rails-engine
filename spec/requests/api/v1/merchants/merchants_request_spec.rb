@@ -35,6 +35,12 @@ RSpec.describe 'Merchants API' do
     expect(merchant[:data][:attributes][:name]).to be_a(String) 
   end
 
+    it 'returns a 400 error when the merchant does not exist' do
+    get "/api/v1/merchants/1"
+
+    expect(response).to have_http_status(404)
+  end
+
   #   it 'returns a error 404 message if no valid merchant id #' do
   #    create_list(:merchant, 11)
   #     get 'api/v1/merchants/8923987297'
