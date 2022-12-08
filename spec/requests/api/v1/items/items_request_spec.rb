@@ -92,6 +92,7 @@ RSpec.describe 'Items API' do
     expect(item.name).to eq(Item.last.name)
     expect(item.name).to eq('King Rubix cube')
   end
+  
   it 'errors out if not updated correctly' do
     id = create(:item).id
     item_name = Item.last.name

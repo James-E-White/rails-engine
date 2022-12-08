@@ -102,6 +102,21 @@
           null
         ]
       },
+      "/Users/jameswhite/Desktop/Turing/Mod3/solo_projects/rails-engine/app/controllers/api/v1/merchant_search_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/jameswhite/Desktop/Turing/Mod3/solo_projects/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
         "lines": [
           1,
@@ -141,6 +156,6 @@
         ]
       }
     },
-    "timestamp": 1670456780
+    "timestamp": 1670525833
   }
 }
