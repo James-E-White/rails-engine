@@ -38,6 +38,7 @@ RSpec.describe 'Merchants API' do
     it 'returns a 400 error when the merchant does not exist' do
     get "/api/v1/merchants/1"
 
+    expect(response).to_not be_successful
     expect(response).to have_http_status(404)
   end
 
