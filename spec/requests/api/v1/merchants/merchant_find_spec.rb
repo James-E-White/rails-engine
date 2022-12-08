@@ -16,4 +16,15 @@ RSpec.describe 'Search Merchants API' do
     expect(merchant[:attributes][:name]).to be_a(String)
     expect(merchant[:attributes][:name]).to eq('Hegrids')
   end
+
+  it 'gives an error if no merchant is found' do
+    Merchant.create(name: 'Odowds', id: 1)
+    Merchant.create(name: 'Zees', id: 2)
+    Merchant.create(name: 'Hegrids', id: 3)
+    Merchant.create(name: 'Hagrids', id: 4)
+    get '/api/v1/merchants/find?name=Dallas'
+
+    expect(response).to_not be_successful
+    expect(response).to have_http_status(404)
+  end
 end
