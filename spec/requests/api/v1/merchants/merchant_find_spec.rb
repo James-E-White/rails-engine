@@ -10,6 +10,7 @@ RSpec.describe 'Search Merchants API' do
 
     response_body = JSON.parse(response.body, symbolize_names: true)
     merchant = response_body[:data]
+    
 
     expect(merchant[:attributes]).to have_key(:name)
     expect(merchant[:attributes][:name]).to be_a(String)
